@@ -29,6 +29,7 @@ public class ExpenseController {
                             .id(expense.getId())
                             .name(expense.getName())
                             .price(expense.getPrice())
+                            .expenseDate(expense.getExpenseDate())
                             .category(expense.getCategory())
                             .owner(expense.getOwner())
                             .build())
