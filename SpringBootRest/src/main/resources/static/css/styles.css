@@ -85,6 +85,23 @@
   box-sizing: border-box;
 }
 
+  #expenseList {
+      max-width: 100vh; /* o el valor que desees */
+      overflow-y: auto; /* agregar una barra de desplazamiento vertical si es necesario */
+      overflow-x: auto;
+  }
+  #expenseCategoryList{
+        max-width: 100vh; /* o el valor que desees */
+        overflow-y: auto; /* agregar una barra de desplazamiento vertical si es necesario */
+        overflow-x: auto;
+   }
+  #OwnerList{
+        max-width: 100vh; /* o el valor que desees */
+        overflow-y: auto; /* agregar una barra de desplazamiento vertical si es necesario */
+        overflow-x: auto;
+   }
+
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -305,6 +322,7 @@ figure {
 
 img,
 svg {
+   max-height: 15rem;
   vertical-align: middle;
 }
 
