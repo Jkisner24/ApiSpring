@@ -26,14 +26,14 @@ public class InitData {
     private OwnerService ownerService;
 
     @PostConstruct
-    public void cargarDatosIniciales() {
+    public void uploadInitialData() {
         if (expenseService.findAll().isEmpty() && expenseCategoryService.findAll().isEmpty() && ownerService.findAll().isEmpty()) {
             ExpenseCategory category1 = ExpenseCategory.builder()
-                    .name("Alimentos")
+                    .name("Foods")
                     .build();
 
             ExpenseCategory category2 = ExpenseCategory.builder()
-                    .name("Transporte")
+                    .name("Transport")
                     .build();
 
             expenseCategoryService.save(category1);
@@ -52,7 +52,7 @@ public class InitData {
 
             Expense expense1 = Expense.builder()
                     .expenseDate(LocalDate.now())
-                    .name("Comida")
+                    .name("Food 1")
                     .price(BigDecimal.valueOf(20.0))
                     .category(category1)
                     .owner(owner1)
@@ -60,7 +60,7 @@ public class InitData {
 
             Expense expense2 = Expense.builder()
                     .expenseDate(LocalDate.now())
-                    .name("Transporte público")
+                    .name("Public transport")
                     .price(BigDecimal.valueOf(15.5))
                     .category(category2)
                     .owner(owner2)
