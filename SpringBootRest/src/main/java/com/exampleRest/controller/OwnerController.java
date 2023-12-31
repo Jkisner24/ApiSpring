@@ -5,6 +5,7 @@ import com.exampleRest.entities.Owner;
 import com.exampleRest.exception.ExpenseNotFound;
 import com.exampleRest.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin("*")
@@ -69,7 +71,11 @@ public class OwnerController {
                     .expenseList(ownerDTO.getExpenseList())
                     .build();
             ownerService.save(owner);
-            return ResponseEntity.created(new URI("/api/v1/owner/save")).build();
+
+            HttpHeaders headers = new HttpHeaders();
+            return ResponseEntity.created(new URI("/api/v1/owner/save"))
+                    .headers(headers)
+                    .body(Map.of("message", "Expense saved successfully"));
         }catch (Exception e){
             throw e;
         }

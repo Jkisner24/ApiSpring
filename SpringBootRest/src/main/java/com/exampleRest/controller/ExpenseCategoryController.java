@@ -7,6 +7,7 @@ import com.exampleRest.entities.ExpenseCategory;
 import com.exampleRest.exception.ExpenseNotFound;
 import com.exampleRest.service.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 @CrossOrigin("*")
 @RestController
@@ -72,8 +74,14 @@ public class ExpenseCategoryController {
                 .expenses(expenseCategoryDTO.getExpenses())
                 .build();
             expenseCategoryService.save(expenseCategory);
+
+            HttpHeaders headers = new HttpHeaders();
+
             return ResponseEntity.created(new URI("/api/v1/expenseCategory/save"))
-                .build();
+                    .headers(headers)
+                    .body(Map.of("message", "Category expense saved successfully"));
+
+
         }catch (Exception e) {
             throw e;
         }
