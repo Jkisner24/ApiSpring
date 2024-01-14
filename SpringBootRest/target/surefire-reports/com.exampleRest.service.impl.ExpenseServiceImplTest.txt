@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.exampleRest.service.impl.ExpenseServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.114 s -- in com.exampleRest.service.impl.ExpenseServiceImplTest
