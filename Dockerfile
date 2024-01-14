@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17-jdk-alpine
 VOLUME /tmp
-COPY target/*.jar ApiProject.jar
-ENTRYPOINT ["java","-jar","/ApiProject.jar"]
+COPY target/*.jar SpringBootRest.jar
+ENTRYPOINT ["java","-jar","/SpringBootRest.jar"]
 EXPOSE 8080
