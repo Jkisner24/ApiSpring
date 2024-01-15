@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  fetch("http://localhost:8080/api/v1/expenseCategory")
+  fetch("https://apispring-13nc.onrender.com/api/v1/expenseCategory")
     .then(response => response.json())
     .then(data => {
       const expenseCategoryListContainer = document.getElementById("expenseCategoryList");
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             name: name
         });
 
-        fetch("http://localhost:8080/api/v1/expenseCategory/save", {
+        fetch("https://apispring-13nc.onrender.com/api/v1/expenseCategory/save", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const expenseCategoryId = event.target.getAttribute("data-expenseCategory-id");
         console.log(expenseCategoryId)
 
-        fetch(`http://localhost:8080/api/v1/expenseCategory/delete/${expenseCategoryId}`, {
+        fetch(`https://apispring-13nc.onrender.com/api/v1/expenseCategory/delete/${expenseCategoryId}`, {
             method: "DELETE"
         })
             .then(response => {
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function fetchExpensesCategory() {
-        fetch("http://localhost:8080/api/v1/expenseCategory")
+        fetch("https://apispring-13nc.onrender.com/api/v1/expenseCategory")
             .then(response => response.json())
             .then(data => {
             })
