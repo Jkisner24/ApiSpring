@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  fetch("http://localhost:8080/api/v1/owner")
+  fetch("https://apispring-13nc.onrender.com/api/v1/owner")
     .then(response => response.json())
     .then(data => {
       const ownerListContainer = document.getElementById("OwnerList");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             name: name,
         });
 
-        fetch("http://localhost:8080/api/v1/owner/save", {
+        fetch("https://apispring-13nc.onrender.com/api/v1/owner/save", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const OwnerId = event.target.getAttribute("data-owner-id");
         console.log(OwnerId)
 
-        fetch(`http://localhost:8080/api/v1/owner/delete/${OwnerId}`, {
+        fetch(`https://apispring-13nc.onrender.com/api/v1/owner/delete/${OwnerId}`, {
             method: "DELETE"
         })
             .then(response => {
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function fetchOwner() {
-        fetch("http://localhost:8080/api/v1/owner")
+        fetch("https://apispring-13nc.onrender.com/api/v1/owner")
             .then(response => response.json())
             .then(data => {
             })
