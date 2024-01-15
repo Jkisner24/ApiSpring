@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 id: ownerId
             }
         });
-            fetch("https://apispring-13nc.onrender.com/api/v1/expense/save", {
+            fetch("https://apispring-13nc.onrender.com/expense/save", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
